@@ -20,9 +20,9 @@ var model = {
     }
 };
  
-var odataServer = ODataServer("http://localhost:1337")
+var odataServer = ODataServer("https://vast-caverns-44119.herokuapp.com:5000")
     .model(model)
     .adapter(Adapter(function(es, cb) { cb(null, db)}));
  
  
-http.createServer(odataServer.handle.bind(odataServer)).listen(1337);
+http.createServer(odataServer.handle.bind(odataServer)).listen(5000);
