@@ -21,7 +21,7 @@ var model = {
     }
 };
  
-var odataServer = ODataServer("https://vast-caverns-44119.herokuapp.com:5000")
+var odataServer = ODataServer("https://vast-caverns-44119.herokuapp.com")
     .model(model)
     .adapter(Adapter(function(es, cb) { cb(null, db)}));
  
