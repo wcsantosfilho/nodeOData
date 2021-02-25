@@ -1,0 +1,16 @@
+{
+  "name": "nodeodata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nedb": "^1.8.0",
+    "simple-odata-server": "^1.1.1",
+    "simple-odata-server-nedb": "^1.0.0"
+  }
+}

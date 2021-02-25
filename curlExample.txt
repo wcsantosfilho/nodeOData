@@ -1,0 +1,4 @@
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"_id":"1", "reason":"Falta de grana", "description": "Não tem dinheiro suficiente para pagar"}' \
+http://localhost:1337/reasons
