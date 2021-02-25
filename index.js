@@ -6,17 +6,26 @@ var Adapter = require('simple-odata-server-nedb');
 const PORT = process.env.PORT || 5000
  
 var model = {
-    namespace: "jsreport",
+    namespace: "ExternalData",
     entityTypes: {
-        "ReasonType": {
+        "Reason": {
             "_id": {"type": "Edm.String", key: true},
             "reason": {"type": "Edm.String"},
             "description": {"type": "Edm.String"},
+        },
+        "Realty": {
+            "_id": {"type": "Edm.String", key: true},
+            "use": {"type": "Edm.String"},
+            "registered": {"type": "Edm.Boolean"},
+            "finality": {"type": "Edm.String"},
         }
     },   
     entitySets: {
-        "reasons": {
-            entityType: "jsreport.ReasonType"
+        "Reason": {
+            entityType: "ExternalData.Reason"
+        },
+        "Realty": {
+            entityType: "ExternalData.Realty"
         }
     }
 };
