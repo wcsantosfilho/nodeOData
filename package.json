@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "nedb": "^1.8.0",
     "simple-odata-server": "^1.1.1",
     "simple-odata-server-nedb": "^1.0.0"

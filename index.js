@@ -1,10 +1,11 @@
-var http = require('http');
-var Datastore = require('nedb');
-var db = new Datastore( { inMemoryOnly: true });
-var ODataServer = require('simple-odata-server');
-var Adapter = require('simple-odata-server-nedb');
+const express = require('express');
+const Datastore = require('nedb');
+const ODataServer = require('simple-odata-server');
+const Adapter = require('simple-odata-server-nedb');
+const app = express();
 const PORT = process.env.PORT || 5000
- 
+var db = new Datastore( { inMemoryOnly: true });
+
 var model = {
     namespace: "ExternalData",
     entityTypes: {
@@ -30,9 +31,12 @@ var model = {
     }
 };
  
-var odataServer = ODataServer("https://vast-caverns-44119.herokuapp.com")
+var odataServer = ODataServer()
     .model(model)
     .adapter(Adapter(function(es, cb) { cb(null, db)}));
- 
- 
-http.createServer(odataServer.handle.bind(odataServer)).listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+app.use("/odata", function (req, res) {
+    odataServer.handle(req, res);
+});
+
+app.listen(PORT, () => console.log(`Listning on ${PORT}`));
