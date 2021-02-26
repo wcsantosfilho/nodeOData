@@ -33,6 +33,7 @@ var model = {
  
 var odataServer = ODataServer()
     .model(model)
+    .cors('*')
     .adapter(Adapter(function(es, cb) { cb(null, db)}));
 
 app.use("/odata", function (req, res) {
