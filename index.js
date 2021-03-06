@@ -13,20 +13,11 @@ var model = {
             "_id": {"type": "Edm.String", key: true},
             "reason": {"type": "Edm.String"},
             "description": {"type": "Edm.String"},
-        },
-        "Realty": {
-            "_id": {"type": "Edm.String", key: true},
-            "use": {"type": "Edm.String"},
-            "registered": {"type": "Edm.Boolean"},
-            "finality": {"type": "Edm.String"},
         }
     },   
     entitySets: {
         "Reason": {
             entityType: "ExternalData.Reason"
-        },
-        "Realty": {
-            entityType: "ExternalData.Realty"
         }
     }
 };
